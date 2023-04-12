@@ -25,5 +25,5 @@ spec:
                 name: github-token
                 key: token
         - name: GITHUB_URL
-          value: "https://api.github.com/repos/SpidyParker/e2e-dispatch//actions/workflows/e2e.yaml/dispatches"
+          value: "https://api.github.com/repos/SpidyParker/e2e-dispatch/actions/workflows/e2e.yaml/dispatches"
       restartPolicy: OnFailure
