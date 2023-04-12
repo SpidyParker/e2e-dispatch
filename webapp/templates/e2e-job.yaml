@@ -13,17 +13,17 @@ spec:
     spec:
       containers:
       - name: api-test
+        image: curlimages/curl
         args:
             - /bin/sh
             - -ec
             - "curl -X POST -H \"Accept: application/vnd.github.v3+json\" -H \"Authorization: token ${GITHUB_TOKEN}\" ${GITHUB_URL} -d '{\"ref\":\"main\"}'"
         env:
-          - name: GITHUB_URL
-            value: "https://api.github.com/repos/SpidyParker/e2e-dispatch//actions/workflows/e2e.yaml/dispatches"
-          - name: GITHUB_TOKEN 
-            valueFrom: 
-            secretKeyRef: 
-                name: github-token 
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+                name: github-token
                 key: token
-        image: curlimages/curl
+        - name: GITHUB_URL
+          value: "https://api.github.com/repos/SpidyParker/e2e-dispatch//actions/workflows/e2e.yaml/dispatches"
       restartPolicy: OnFailure
