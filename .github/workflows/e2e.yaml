@@ -1,0 +1,11 @@
+name: Run e2e-api test 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-e2e:
+    name: run e2e
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "Running Tests!"
