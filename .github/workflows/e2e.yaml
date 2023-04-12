@@ -8,4 +8,4 @@ jobs:
     name: run e2e
     runs-on: ubuntu-latest
     steps:
-      run: echo "Running Tests!"
+    - run: echo "Running Tests!"
