@@ -14,10 +14,13 @@ on:
       grepTags:
          description: 'Test tags E.g @criticalPath or @regression|@criticalPath to select multiple tags'
          required: false
+env:
+  ENVIRONMENT: ${{ github.event.inputs.environment }}
+  GREPTAGS: ${{ github.event.inputs.grepTags }}
 
 jobs:
   run-e2e:
     name: run e2e
     runs-on: ubuntu-latest
     steps:
-    - run: echo "$environment $grepTags"
+    - run: echo "$ENVIRONMENT $GREPTAGS"
