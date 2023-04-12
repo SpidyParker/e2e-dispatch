@@ -17,7 +17,7 @@ spec:
         args:
             - /bin/sh
             - -ec
-            - "curl -X POST -H \"Accept: application/vnd.github.v3+json\" -H \"Authorization: token ${GITHUB_TOKEN}\" ${GITHUB_URL} -d '{\"ref\":\"main\" ,\"inputs\": { \"environment\":\"${ENVIRONMENT}\",\"grepTags\": \"${GREPTAGS}\"}}'"
+            - "curl -X POST -H \"Accept: application/vnd.github.v3+json\" -H \"Authorization: token ${GITHUB_TOKEN}\" ${GITHUB_URL} -d '\"{\"ref\":\"main\" ,\"inputs\": { \"environment\":\"${ENVIRONMENT}\",\"grepTags\": \"${GREPTAGS}\"}}\"'"
         env:
         - name: GITHUB_TOKEN
           valueFrom:
