@@ -13,11 +13,11 @@ spec:
     spec:
       containers:
       - name: api-test
-        image: curlimages/curltttttt
+        image: curlimages/curl
         args:
             - /bin/sh
             - -ec
-            - "curl -X POST -H \"Accept: application/vnd.github.v3+json\" -H \"Authorization: token ${GITHUB_TOKEN}\" ${GITHUB_URL} -d '{\"ref\":\"main\" ,\"inputs\": { \"environment\":\"test\",\"grepTags\": \"@criticalpath\"}}'"
+            - "exit 1"
         env:
         - name: GITHUB_TOKEN
           valueFrom:
